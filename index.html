@@ -767,6 +767,134 @@
       .parceria-section { padding: 4rem 1.5rem; }
     }
 
+    /* ─── TOP 5 ───────────────────────────────────────── */
+    .top5-section {
+      padding: 6rem 3rem;
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .top5-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .top5-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .top5-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.8rem;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .top5-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--purple-faint), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .top5-card:hover {
+      border-color: var(--purple-mid);
+      transform: translateX(6px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 30px var(--purple-glow);
+    }
+    .top5-card:hover::before { opacity: 1; }
+    .top5-rank {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      min-width: 56px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .top5-rank-1 { color: #FFD700; text-shadow: 0 0 20px rgba(255,215,0,0.4); }
+    .top5-rank-2 { color: #C0C0C0; text-shadow: 0 0 20px rgba(192,192,192,0.3); }
+    .top5-rank-3 { color: #CD7F32; text-shadow: 0 0 20px rgba(205,127,50,0.3); }
+    .top5-rank-4, .top5-rank-5 { color: var(--white-dim); }
+    .top5-bar-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .top5-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.45rem;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      line-height: 1;
+    }
+    .top5-artist {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple);
+    }
+    .top5-bar-bg {
+      height: 4px;
+      background: var(--border);
+      border-radius: 100px;
+      overflow: hidden;
+      margin-top: 0.4rem;
+    }
+    .top5-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--purple), var(--purple-bright));
+      box-shadow: 0 0 10px var(--purple-glow);
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+    .top5-plays {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--white-dim);
+      min-width: 60px;
+      text-align: right;
+      position: relative;
+      z-index: 1;
+    }
+    .top5-plays span {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      display: block;
+      text-align: right;
+    }
+    .top5-arrow {
+      font-size: 1.1rem;
+      color: var(--white-dim);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .top5-card:hover .top5-arrow { transform: translateX(4px); color: var(--purple); }
+
+    @media (max-width: 768px) {
+      .top5-section { padding: 4rem 1.5rem; }
+      .top5-card { padding: 1rem 1.2rem; gap: 1rem; }
+      .top5-rank { font-size: 2rem; min-width: 40px; }
+      .top5-plays { display: none; }
+    }
+
     /* ─── WHATSAPP FLOAT ──────────────────────────────── */
     .wa-float {
       position: fixed;
@@ -856,6 +984,7 @@
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#artistas">Artistas</a></li>
       <li><a href="#parceria">Parcerias</a></li>
+      <li><a href="#top5">Top 5</a></li>
       <li><a href="#musica">Música</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -1213,6 +1342,74 @@
           loading="lazy"
           style="display:block;">
         </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TOP 5 -->
+  <div class="top5-section" id="top5">
+    <div class="top5-inner">
+      <div class="section-label reveal">Charts</div>
+      <h2 class="section-title reveal">TOP 5 <em>MAIS TOCADAS</em></h2>
+      <div class="top5-grid">
+
+        <a class="top5-card reveal" href="https://open.spotify.com/intl-pt/track/57f0emymkHIhtC9lv05phZ" target="_blank">
+          <div class="top5-rank top5-rank-1">1</div>
+          <div class="top5-bar-wrap">
+            <div class="top5-name">Homenagem da Zs</div>
+            <div class="top5-artist">Flow Funk Records</div>
+            <div class="top5-bar-bg"><div class="top5-bar-fill" style="width:100%"></div></div>
+          </div>
+          <div class="top5-plays">978<span>streams</span></div>
+          <div class="top5-arrow">→</div>
+        </a>
+
+        <a class="top5-card reveal" href="https://open.spotify.com/intl-pt/track/5pn4uTcHO4tngAJR1M0qxA" target="_blank">
+          <div class="top5-rank top5-rank-2">2</div>
+          <div class="top5-bar-wrap">
+            <div class="top5-name">Montagem Kamasutra 3</div>
+            <div class="top5-artist">Flow Funk Records</div>
+            <div class="top5-bar-bg"><div class="top5-bar-fill" style="width:86%"></div></div>
+          </div>
+          <div class="top5-plays">280<span>streams</span></div>
+          <div class="top5-arrow">→</div>
+        </a>
+
+        <a class="top5-card reveal" href="https://open.spotify.com/intl-pt/track/45MQtLBRl3rcGbYdhEgJNk" target="_blank">
+          <div class="top5-rank top5-rank-3">3</div>
+          <div class="top5-bar-wrap">
+            <div class="top5-name">Ritmada da Zona Nor...</div>
+            <div class="top5-artist">Flow Funk Records</div>
+            <div class="top5-bar-bg"><div class="top5-bar-fill" style="width:70%"></div></div>
+          </div>
+          <div class="top5-plays">228<span>streams</span></div>
+          <div class="top5-arrow">→</div>
+        </a>
+
+        <a class="top5-card reveal" href="https://open.spotify.com/intl-pt/track/7hZcWtf9jccdzLOboX3OHY" target="_blank">
+          <div class="top5-rank top5-rank-4">4</div>
+          <div class="top5-bar-wrap">
+            <div class="top5-name">Montagem Kamasutra 2</div>
+            <div class="top5-artist">Flow Funk Records</div>
+            <div class="top5-bar-bg"><div class="top5-bar-fill" style="width:38%"></div></div>
+          </div>
+          <div class="top5-plays">125<span>streams</span></div>
+          <div class="top5-arrow">→</div>
+        </a>
+
+        <a class="top5-card reveal" href="https://open.spotify.com/intl-pt/track/500hZeLhMdVJCXxJtarEHO" target="_blank">
+          <div class="top5-rank top5-rank-5">5</div>
+          <div class="top5-bar-wrap">
+            <div class="top5-name">Romance ou Putaria</div>
+            <div class="top5-artist">Flow Funk Records</div>
+            <div class="top5-bar-bg"><div class="top5-bar-fill" style="width:33%"></div></div>
+          </div>
+          <div class="top5-plays">108<span>streams</span></div>
+          <div class="top5-arrow">→</div>
+        </a>
+
       </div>
     </div>
   </div>
